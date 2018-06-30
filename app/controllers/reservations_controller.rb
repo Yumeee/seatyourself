@@ -3,7 +3,8 @@ class ReservationsController < ApplicationController
 before_action :ensure_logged_in
 before_action :load_restaurant
 before_action :load_reservations, except:[:index, :new, :create]
-before_action :ensure_user_owns_reservation, only:[:edit, :update, :show, :destroy] #except
+before_action :ensure_user_owns_reservation, only:[:edit, :update, :show, :destroy]
+#except
 
 
     def index
@@ -42,7 +43,7 @@ before_action :ensure_user_owns_reservation, only:[:edit, :update, :show, :destr
         @reservation.time       = params[:reservation][:time]
         @reservation.party_size = params[:reservation][:party_size]
         if @reservation.save
-            flash[:notice] = "Reservation Successfully created..."
+            flash[:notice] = "Reservation Successfully created"
             redirect_to restaurant_reservation_path(@restaurant ,@reservation)
         else
             render :edit

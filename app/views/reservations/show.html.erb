@@ -1,3 +1,7 @@
+
+<h2>Confirmation Page</h2>
+
+<section>
 <h1>Confirm Reservation</h1>
 
 <p><%="Reservation booked for: #{@reservation.user.first_name} #{@reservation.user.last_name}" %></p>
@@ -7,3 +11,4 @@
 <p><%="Reservation Date: #{@reservation.date}"%></p>
 <p><%="Reservation Party Size: #{@reservation.party_size}"%></p>
 <p><%=link_to "To Edit Reservation",edit_restaurant_reservation_path(@restaurant, @reservation)%></p>
+</section>

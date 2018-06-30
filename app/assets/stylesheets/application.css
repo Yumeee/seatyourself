@@ -15,24 +15,38 @@
  */
 
  html {
-   font-family: 'Open Sans', sans-serif;
+   font-family: 'Lato', sans-serif;
    box-sizing: border-box;
-   color: rgba(255, 255, 255, 0.8);
+   color: blue;
+   text-align: center;
+ }
+
+ p {
+   color:brown;
+   font-size: 1.5em;
+ }
+
+ li  {
+   list-style: none;
  }
 
  body {
-   background-image: url('https://www.thechediandermatt.com/images/content/mood/Big/The-Chedi-Andermatt-RESTAURANT-Main-Dining-03.jpg');
+   background-image: url('background2');
+   background-size: 100%;
    background-repeat: no-repeat;
    box-sizing: border-box;
+  font-size: 1.2em;
+
  }
 
 .welcome {
-     font-size: 3.5em;
-     background-color:rgba(255,255,255,0.3);
+     font-size: 5em;
+     background-color:rgba(255,255,255,.8);
      text-align: center;
-     padding: .5em;
+     padding: .7em;
      font-weight: bolder;
      color:brown;
+     display: inline-block;
    }
 
 .welcome span {
@@ -42,19 +56,19 @@
 
 
 .user_info  {
-  color: ;
   background-color:rgba(255,255,255,0.7);
   font-size: 1em;
-  display: block;
-  text-align: left;
-  margin: 0 auto;
+  text-align: right;
+
+
 
 }
 
 section {
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.9);
   display: inline-block;
   padding: 2em;
+  border: 2px solid brown;
 }
 
 .name a {
@@ -85,24 +99,95 @@ section .name:hover {
 }
 
 .individual_restaurant img {
-  width: 200px;
-  grid
+  width: 400px;
 }
+
+.individual_restaurant p {
+  text-align: left;
+  border: 1px solid brown;
+  padding: 1em;
+
+}
+
+.individual_restaurant p span {
+  color:black;
+}
+
+
+
+
 
 .title h1 {
   text-align: center;
   color: black;
-  background-color: white;
+  background-color: rgba(255,255,255,.8);
 }
 
 .button {
-  background-color: white;
-  border: 2px solid grey;
-  padding: 0.5em;
-  border-radius: 1em;
+  background-color: brown;
+  display: inline-block;
+  padding: .8em;
+  border-radius: 9em;
   text-decoration: none;
+  text-align: left;
 }
+
+.button  a {
+color:white;
+}
+
+
+
+.button_container {
+  text-align: right;
+}
+
+
+
+header li  input{
+  font-size: 40px;
+
+}
+
+.restaurant_index_search input {
+  font-size: 30px;
+}
+
+p input {
+    font-size: 30px;
+}
+
 
 .all_restaurants {
   margin: 1em;
+}
+
+footer {
+    background: brown;
+    color: White;
+    font-size: 1.5em;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.slogan {
+  color:white;
+  font-size: 3em;
+  background-color: rgb(139,0,0, 0.6);
+  padding: 0.3em;
+  display: inline-block;
+
+}
+
+.errors {
+  color:red;
+  font-size: 1.2em;
+}
+
+
+.index_image {
+  max-width: 20%;
 }

@@ -1,6 +1,29 @@
 
+
+
+
+<div class="title">
+  <h1> Reservation Page</h1>
+</div>
+
+<section>
 <h1>Book A Reservation</h1>
  You are signed is as: <%=current_user.first_name %> <%= current_user.last_name %>
+
+<div class="errors">
+
+
+ <% if @reservation.errors.any? %>
+   <ul>
+     <% @reservation.errors.full_messages.each do |m| %>
+       <li><%= m %></li>
+     <% end %>
+   </ul>
+ <% end %>
+
+
+</div>
+
 <%= form_for [@restaurant, @reservation] do |f| %>
 <p>
 <%=f.label :date %><br>
@@ -8,7 +31,7 @@
 </p>
 <p>
 <%=f.label :time %><br>
-<%=f.time_select :time, start_hour: @restaurant.open.hour , end_hour: @restaurant.close.hour %> <br>
+<%=f.time_field :time, start_hour: @restaurant.open.hour , end_hour: @restaurant.close.hour %> <br>
 </p>
 
 <p>
@@ -21,3 +44,4 @@
  </p>
 
  <% end %>
+</section>

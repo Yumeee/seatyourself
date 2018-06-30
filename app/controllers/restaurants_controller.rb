@@ -3,6 +3,11 @@ class RestaurantsController < ApplicationController
   before_action :ensure_logged_in, except: [:show, :index]
   before_action :ensure_user_owns_restaurant, only: [:edit, :destroy, :update]
 
+
+  def current_capacity
+    reservations.map { |r| r.party_size.to_i }.sum
+  end
+  
   def index
     @restaurants = Restaurant.search(params[:term])
   end
@@ -89,6 +94,8 @@ class RestaurantsController < ApplicationController
       redirect_to restaurant_path(@restaurant.id)
     end
   end
+
+
 
 
 end

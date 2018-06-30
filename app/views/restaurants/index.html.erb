@@ -1,21 +1,36 @@
+
+<div class= 'button_container'>
+<li class = 'button'><a href="/restaurants/new">Add a New Restaurant</a></li>
+</div>
+
 <div class="title">
   <h1><a link href="/restaurants"> Welcome to SeatYourself</a></h1>
-  <a href="/restaurants/new" class="button">Add a New Restaurant</a>
 </div>
+
+<div class="restaurant_index_search">
+
 
 <%= form_tag(restaurants_path, method: :get) do %>
   <%= text_field_tag :term, params[:term] %>
   <%= submit_tag 'Search', name:nil %>
 <% end %>
+</div>
 
-<% @restaurants.each do |restaurant| %>
+
 <section class="all_restaurants">
+<% @restaurants.each do |restaurant| %>
+
+
+  <h2><%=link_to(restaurant.name, restaurant_path(restaurant.id))%><br>
+    <%=link_to restaurant_path(restaurant.id) do %>
+    <%= image_tag (restaurant.main_picture), :class => 'index_image'%> </h2>
+    <%end%>
   <p>
-  Name: <%=link_to(restaurant.name, restaurant_path(restaurant.id))%><br>
   Address: <%=restaurant.address%><br>
   Phone: <%=restaurant.phone_number%><br>
-  Total Capacity: <%=restaurant.capacity%>
   </p>
-  <p><%= link_to "Reserve", new_restaurant_reservation_url(restaurant.id) %> </p>
-</section>
+  <h4><%= link_to "Reserve", new_restaurant_reservation_url(restaurant.id) %> </h4>
+  <hr>
 <% end %>
+
+</section>
